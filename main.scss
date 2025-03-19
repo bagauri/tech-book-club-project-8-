@@ -1,0 +1,769 @@
+@import "_mixin.scss";
+
+.body {
+  flex-direction: column;
+  @include flex($j: center);
+  overflow: hidden;
+}
+//1st section
+.main {
+  position: relative;
+  min-height: 834px;
+  background-color: #faf5f3;
+  overflow: hidden;
+  width: 100%;
+  z-index: -2;
+
+  @include tablet {
+    min-height: 1557px;
+  }
+  @include phone {
+    min-height: 1117px;
+  }
+}
+.blue-gradient {
+  position: absolute;
+  width: 684px;
+  height: 684px;
+  background-color: #9cc9da;
+  filter: blur(100px);
+  bottom: -226px;
+  right: -440px;
+  opacity: 40%;
+  z-index: -1;
+
+  @include tablet {
+    right: -330px;
+  }
+}
+
+.header {
+  max-width: 1184px;
+  min-height: 36px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include tablet {
+    max-width: calc(100vw - 64px);
+  }
+  @include phone {
+    max-width: calc(100vw - 32px);
+  }
+}
+.logo {
+  @include flex($j: space-between);
+  width: 192px;
+  height: 36px;
+}
+h1 {
+  @include fira;
+  font-size: 20px;
+  letter-spacing: -1.2px;
+}
+
+.cont {
+  max-width: 1174px;
+  min-height: 606px;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  @include flex($j: space-between);
+
+  @include tablet {
+    flex-direction: column;
+    max-width: calc(100vw - 64px);
+    height: auto;
+    min-height: 600px;
+    margin-top: 0;
+    margin-bottom: 80px;
+
+    @include phone {
+      max-width: calc(100vw - 32px);
+      height: auto;
+      min-height: 600px;
+    }
+
+    & > img {
+      width: 100%;
+
+      @include phone {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &-inner {
+    max-width: 570px;
+    min-height: 491px;
+    margin-top: 57.5px;
+
+    @include tablet {
+      margin-bottom: 62px;
+      max-width: 100%;
+    }
+
+    @include phone {
+      height: auto;
+      margin-top: 42px;
+    }
+
+    &-text {
+      width: 100%;
+      height: 330px;
+    }
+  }
+}
+
+h2 {
+  @include mono(
+    $w: 700
+  ); //ფონტი რატომღაც იგივე არ არის, მომრგვალებები აქვს ნაკლებად და სისქე
+  font-size: 62px;
+  line-height: 120%;
+  letter-spacing: -2px;
+  height: 222px;
+  word-wrap: break-word;
+  max-width: 20ch;
+  background: linear-gradient(-60deg, #062630 45%, #fea36f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: transparent;
+
+  @include tablet {
+    max-width: 15ch;
+  }
+
+  @include phone {
+    font-size: 38px;
+    height: auto;
+  }
+}
+
+.cont-inner-text > p {
+  margin-top: 24px;
+  @include inter($w: 400);
+  @include fs20;
+
+  @include tablet {
+    word-wrap: break-word;
+    max-width: 90%;
+  }
+  @include phone {
+    max-width: 100%;
+  }
+}
+
+.cont > img {
+  border-radius: 8px;
+}
+
+.c2a {
+  max-width: 388px;
+  height: 129px;
+  margin-top: 32px;
+
+  @include phone {
+    margin-top: 0;
+  }
+}
+
+.c2a > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  border: 2px solid #062630;
+  border-radius: 8px;
+  padding: 20px 24px;
+  max-width: 380px;
+}
+
+.style1 {
+  @include mono($w: 600);
+  @include fs18;
+
+  @include phone {
+    font-size: 16px;
+  }
+}
+
+.testimonials {
+  width: 388px;
+  height: 45px;
+  margin-top: 20px;
+  @include flex($j: unset);
+
+  &-imgs {
+    display: flex;
+    width: 110px;
+    height: 40px;
+    margin-right: 12px;
+  }
+
+  &-imgs > img {
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: -5px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &-rating > p {
+    @include mono($w: 400);
+    @include fs14;
+    margin-top: 4px;
+
+    @include phone {
+      word-wrap: break-word;
+      max-width: 90%;
+    }
+  }
+}
+//2nd + 3rd sections
+
+.dup {
+  max-width: 1170px;
+  min-height: 520px;
+  @include flex($j: space-between);
+  margin-top: 120px;
+  gap: 80px;
+
+  @include tablet {
+    margin-top: 80px;
+    flex-direction: column-reverse;
+    max-width: calc(100vw - 64px);
+    height: auto;
+
+    @include phone {
+      max-width: calc(100vw - 32px);
+    }
+  }
+
+  & + .dup {
+    @include tablet {
+      flex-direction: column;
+
+      @include phone {
+        flex-direction: column;
+      }
+    }
+  }
+
+  & .img img {
+    border-radius: 20px;
+    width: auto;
+
+    @include phone {
+      max-width: calc(100vw - 32px);
+    }
+  }
+
+  & .text-cont {
+    width: 530px;
+    height: 432px;
+
+    @include phone {
+      max-width: 100%;
+    }
+  }
+}
+
+h3 {
+  @include mono($w: 600);
+  @include fs50;
+  margin-bottom: 34px;
+
+  @include phone {
+    font-size: 34px;
+    max-width: 14ch;
+    word-break: break-word;
+  }
+}
+
+.cont2 {
+  width: 431px;
+  height: 268px;
+
+  @include phone {
+    max-width: calc(100vw - 32px);
+  }
+
+  &-inner {
+    display: inline-flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 24px;
+
+    @include phone {
+      max-width: 100%;
+    }
+
+    & p {
+      @include inter($w: 400);
+      @include fs20;
+    }
+  }
+}
+
+.cont3 {
+  width: 530px;
+  height: 266px;
+  position: relative;
+  overflow: visible;
+
+  @include tablet {
+    max-width: calc(100vw - 64px);
+  }
+
+  & h3 {
+    margin-bottom: 24px;
+  }
+
+  & p {
+    @include inter($w: 400);
+    @include fs20;
+
+    & span {
+      @include inter($w: 600);
+    }
+  }
+
+  & img {
+    width: 150px;
+    height: 60px;
+    position: absolute;
+    top: 24%;
+    left: 24%;
+
+    @include phone {
+      top: 33.5%;
+      left: -2%;
+      width: 98px;
+      height: 40px;
+    }
+
+    &:nth-of-type(2) {
+      width: 119.56px;
+      height: 138px;
+      position: absolute;
+      left: 100%;
+      top: 83%;
+
+      @include tablet {
+        left: 62%;
+        top: 265%;
+        width: 50%;
+        height: 50%;
+      }
+
+      @include phone {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+//4th section
+.journey {
+  width: 1170px;
+  height: 454px;
+  padding-top: 80px;
+  margin-top: 120px;
+  position: relative;
+  background-color: #faf5f3;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: -2;
+
+  @include tablet {
+    width: calc(100vw - 64px);
+    height: 700px;
+    justify-content: unset;
+    padding-bottom: 40px;
+  }
+
+  @include phone {
+    width: calc(100vw - 35px);
+    padding-top: 64px;
+    padding-bottom: 0;
+    height: 620px;
+  }
+
+  & .blue-gradient {
+    bottom: -310px;
+    right: -282px;
+    z-index: -1;
+
+    @include phone {
+      bottom: -500px;
+      right: -500px;
+    }
+  }
+
+  & h3 {
+    max-width: 475px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    @include tablet {
+      margin-left: 32px;
+      margin-right: 32px;
+      margin-bottom: 48px;
+      max-width: 70%;
+      text-align: start;
+      word-break: break-word;
+    }
+
+    @include phone {
+      margin-left: 16px;
+      margin-right: 16px;
+      word-break: break-word;
+      max-width: 15ch;
+    }
+  }
+
+  & .steps {
+    @include flex($j: space-between);
+    margin: auto;
+    width: 1050px;
+    height: 110px;
+    margin-bottom: 70px;
+
+    @include tablet {
+      flex-direction: column;
+      margin: unset;
+      gap: 40px;
+      margin-left: 32px;
+      margin-right: 32px;
+    }
+
+    @include phone {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+
+    & .step {
+      position: relative;
+      width: 226.5px;
+      height: 100%;
+
+      @include tablet {
+        width: 100%;
+      }
+
+      & img {
+        margin-bottom: 24px;
+
+        @include phone {
+          width: 32px;
+          height: 32px;
+          margin-bottom: 17px;
+        }
+
+        &:nth-of-type(2) {
+          position: absolute;
+          top: 0;
+          right: 0;
+
+          @include tablet {
+            visibility: hidden;
+          }
+        }
+      }
+    }
+  }
+}
+
+//5th section
+.membership {
+  width: 970px;
+  min-height: auto;
+  margin-top: 120px;
+  @include flex($j: space-between);
+  flex-direction: column;
+  gap: 64px;
+
+  @include tablet {
+    max-width: calc(100vw - 64px);
+    gap: 40px;
+    justify-content: unset;
+    height: 1000px;
+  }
+
+  @include phone {
+    height: 1400px;
+    max-width: calc(100vw - 32px);
+    margin: auto;
+    margin-top: 64px;
+
+    & h3 {
+      margin-bottom: 0;
+    }
+  }
+
+  & .options {
+    width: 100%;
+    height: 390px;
+    @include flex($j: space-between);
+    gap: 32px;
+
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    @include phone {
+      justify-content: space-around;
+    }
+
+    & .card-s,
+    .card-l {
+      width: 286px;
+      height: 358px;
+      border: 1px solid #e6e1df;
+      border-radius: 8px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      box-sizing: border-box;
+
+      & .details {
+        height: 215px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        & h4 {
+          @include mono($w: 600);
+          @include fs24;
+        }
+
+        & .price {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+
+          & .price {
+            @include mono($w: 600);
+            @include fs34;
+          }
+
+          & .period {
+            @include inter($w: 400);
+            @include fs20;
+          }
+        }
+
+        hr {
+          width: 238px;
+          border: 1px solid #e6e1df;
+        }
+
+        & .features {
+          height: 72px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          & .feature {
+            gap: 12px;
+            @include flex($j: unset);
+
+            & p {
+              @include inter($w: 400);
+              @include fs20;
+            }
+          }
+        }
+      }
+
+      & a {
+        max-width: 302px;
+        text-decoration: none;
+        border: 2px solid #062630;
+        border-radius: 8px;
+        padding: 20px 24px;
+        @include mono($w: 600);
+        @include fs18;
+        background-color: #fff5ef;
+        text-align: center;
+      }
+    }
+
+    & .card-l {
+      background-color: #faf5f3;
+      width: 350px;
+      height: 100%;
+      padding: 40px 24px;
+      position: relative;
+      overflow: hidden;
+      z-index: -2;
+      box-sizing: border-box;
+
+      @include tablet {
+        width: 286px;
+        height: 358px;
+        padding: 24px;
+      }
+
+      & .blue-gradient {
+        bottom: -470px;
+        right: -450px;
+        z-index: -1;
+      }
+
+      & .details {
+        max-width: 302px;
+
+        hr {
+          width: 270px;
+        }
+      }
+
+      & a {
+        z-index: 1;
+      }
+    }
+  }
+}
+
+//6th section
+.testimonial {
+  margin-top: 120px;
+  width: 970px;
+  height: 296px;
+  @include flex($j: space-between);
+  flex-direction: column;
+
+  @include tablet {
+    max-width: calc(100vw - 64px);
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  @include phone {
+    max-width: calc(100vw - 32px);
+    height: auto;
+  }
+
+  & .stars {
+    width: 164px;
+    height: 28px;
+    @include flex($j: space-between);
+  }
+
+  & h5 {
+    @include mono($w: 600);
+    @include fs34;
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 90%;
+
+    @include tablet {
+      text-align: start;
+    }
+
+    @include phone {
+      font-size: 24px;
+    }
+  }
+
+  & p {
+    @include inter($w: 400);
+    @include fs20;
+  }
+}
+
+//last section
+footer {
+  background-color: #062630;
+  height: 521px;
+  width: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  @include flex($j: space-between);
+  flex-direction: column;
+  margin-top: 120px;
+
+  & .container {
+    margin-top: 80px;
+    width: 753px;
+    height: 307px;
+    @include flex($j: space-between);
+    flex-direction: column;
+
+    @include phone {
+      width: calc(100vw - 32px);
+    }
+
+    & h6 {
+      @include mono($w: 600);
+      @include fs50;
+      text-align: center;
+      color: #fff;
+
+      @include phone {
+        font-size: 34px;
+        word-wrap: break-word;
+        max-width: 80%;
+      }
+    }
+
+    & .c2a {
+      margin-left: 32px;
+      @include phone {
+        padding: 0 16px;
+        width: calc(100vw - 32px);
+      }
+
+      & a {
+        border: 2px solid white;
+
+        & span {
+          color: #fff;
+        }
+      }
+    }
+
+    & .c2a .testimonials {
+      &-rating {
+        & p {
+          color: #fff;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+
+  & .content {
+    max-width: 1170px;
+    width: 100%;
+    height: 70px;
+    @include flex($j: space-between);
+    border-top: 1px solid #385159;
+    box-sizing: border-box;
+
+    @include tablet {
+      width: 100%;
+      padding: 0 32px;
+    }
+
+    & p {
+      color: #fff !important;
+      @include mono($w: 400);
+      @include fs14;
+    }
+  }
+}
