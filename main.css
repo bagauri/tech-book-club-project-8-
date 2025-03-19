@@ -217,6 +217,12 @@ h2 {
   padding: 20px 24px;
   max-width: 380px;
 }
+.c2a > a:hover {
+  background: linear-gradient(90deg, #ffe2d1, #fff5ef);
+}
+.c2a > a:active {
+  box-shadow: 0px 0px 0px 3px #fff, 0px 0px 0px 5px #385159;
+}
 
 .style1 {
   font-family: "Martian Mono", monospace;
@@ -723,6 +729,14 @@ h3 {
   background-color: #fff5ef;
   text-align: center;
 }
+.membership .options .card-s a:hover,
+.membership .options .card-l a:hover {
+  background: linear-gradient(90deg, #ffe2d1, #fff5ef);
+}
+.membership .options .card-s a:active,
+.membership .options .card-l a:active {
+  box-shadow: 0px 0px 0px 3px #fff, 0px 0px 0px 5px #385159;
+}
 .membership .options .card-l {
   background-color: #faf5f3;
   width: 350px;
@@ -879,6 +893,12 @@ footer .container .c2a a {
 }
 footer .container .c2a a span {
   color: #fff;
+}
+footer .container .c2a a:hover {
+  background: linear-gradient(90deg, #385159, #062630);
+}
+footer .container .c2a a:active {
+  box-shadow: 0px 0px 0px 3px #062630, 0px 0px 0px 5px #e6e1df;
 }
 footer .container .c2a .testimonials-rating p {
   color: #fff;
